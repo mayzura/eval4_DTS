@@ -73,42 +73,18 @@
             <!-- Portfolio Start -->
             <div class="portfolio">
                 <div class="container">
-                    <div class="section-header">
+                    <!-- <div class="section-header">
                         <h2>Our Product</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium ornare velit non</p>
-                    </div>
+                    </div> -->
                     <div class="row portfolio-container">
 
-                                <?php
-                                    function buatkoneksi(){
-                                     $dbhost = "localhost";
-                                     $dbuser = "root";
-                                     $dbpass = "";
-                                     $dbname = "company_eval4";
-
-                                     return mysqli_connect($dbhost, $dbuser, $dbpass,$dbname);
-                                    }
-                                    // ambil tabell produk
-                                    function getTableProduk(){
-                                        $link = buatkoneksi();
-                                        $query = "select * from produk";
-                                        $result = mysqli_query($link, $query);
-
-                                        //ambil semua isi tabel ke dalam bentukarray 2 dimensi
-                                        $hasil = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                                        return $hasil;
-                                    }
-                                    echo '<div class="col-lg-3 col-md-6 col-sm-6 portfolio-item">';
-                                               echo '<div class="portfolio-wrap">';                         
-                                                echo "<figure>";
-                                                    echo '<img src="img/portfolio-1.jpg" alt="Portfolio Image">';
-                                                    echo '<a href="img/portfolio-1.jpg" class="link-preview" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>';
-                                                    echo '<a href="#" class="link-details"><i class="fa fa-link"></i></a>';
-                                                    echo '<a class="portfolio-title" href="#">Project Name Here</a>';
-                                                echo "</figure>";
-                                            echo "</div>";
-                                        echo "</div>";
-                                        ?>
+                    <?php
+                        include 'model_eval.php';
+                        $isiTabelProduk = getTableProduk();
+                        include 'view_eval.php';
+                    ?>
+               
                 </div>
             </div>
             <!-- Portfolio Start -->

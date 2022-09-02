@@ -34,6 +34,7 @@ a:focus {
 
 .container {
     max-width: 1050px;
+    position: relative;
 }
 
 
@@ -1793,7 +1794,7 @@ a:focus {
 @media(min-width: 992px) {
     .footer .container:first-child {
         max-width: 960px;
-        margin-bottom: 30px;
+        /* margin-bottom: 30px; */
     }
     
     .footer .footer-about,
